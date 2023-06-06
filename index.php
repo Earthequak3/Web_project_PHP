@@ -20,6 +20,7 @@
 <br><br>
 <div class="container">
     <h2>Homepage </h2>
+    <a class="btn btn-danger" href="logout.php">Logut</a>
 
 
 </div>

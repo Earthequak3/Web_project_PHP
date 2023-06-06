@@ -52,7 +52,7 @@
         <div class="clearfix">
         </div>
     </form>
-    <p class="text-center"><a href="#">Create an Account</a></p>
+    <p class="text-center"><a href="add_users.php">Create an Account</a></p>
 
     <?php
     $conn = mysqli_connect('localhost','root','66ecdaf1','Users');
