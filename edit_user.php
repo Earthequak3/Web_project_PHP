@@ -51,18 +51,18 @@
     $conn = mysqli_connect('localhost','root','66ecdaf1','Users');
 
     if(isset($_POST['insert-btn'])) {
-        $user_name = $_POST['user_name'];
-        $user_email = $_POST['user_email'];
-        $user_password = $_POST['user_password'];
 
+        $euser_name = $_POST['user_name'];
+        $euser_email = $_POST['user_email'];
+        $euser_password = $_POST['user_password'];
 
-        $insert = "INSERT INTO user(user_name,user_email,user_password) VALUES('$user_name','$user_email','$user_password')";
-        $run_insert = mysqli_query($conn, $insert);
-        if ($run_insert === true) {
-            echo "Data has been inserted";
+        $update = "UPDATE user SET user_name = '$euser_name',user_email = '$euser_email',user_password = '$euser_password' WHERE user_id = '$edit_id'";
+        $run_update = mysqli_query($conn, $update);
+        if ($run_update === true) {
+            echo "Data has been edited";
 
         } else {
-            echo "Insert Failed";
+            echo "Edit Failed";
         }
     }
 
@@ -78,6 +78,9 @@
         }*/
 
     ?>
+
+
+    <a class="btn btn-primary" href="view_user.php">View Users</a>
 </div>
 
 </body>
