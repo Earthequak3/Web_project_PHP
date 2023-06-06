@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    $conn = mysqli_connect('localhost','root','66ecdaf1','Users');
+
+
+
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

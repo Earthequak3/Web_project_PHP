@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,6 +68,7 @@
 
     if ($email == $db_email && $password == $db_password) {
         echo "<script>window.open('index.php','_self')</script>";
+        $_SESSION['email'] = $db_email;
     }else{
     echo  "Email or Password is invalid";}
     }
