@@ -659,7 +659,7 @@ return array(
     'PhpMyAdmin\\ListAbstract' => $baseDir . '/libraries/classes/ListAbstract.php',
     'PhpMyAdmin\\ListDatabase' => $baseDir . '/libraries/classes/ListDatabase.php',
     'PhpMyAdmin\\Logging' => $baseDir . '/libraries/classes/Logging.php',
-    'PhpMyAdmin\\Menu' => $baseDir . '/libraries/classes/Menu.php',
+    'PhpMyAdmin\\Menu' => $baseDir . '/libraries/classes/Navigation.php',
     'PhpMyAdmin\\Message' => $baseDir . '/libraries/classes/Message.php',
     'PhpMyAdmin\\Mime' => $baseDir . '/libraries/classes/Mime.php',
     'PhpMyAdmin\\MoTranslator\\CacheException' => $vendorDir . '/phpmyadmin/motranslator/src/CacheException.php',

@@ -1,3 +1,17 @@
+<?php
+
+function generateCSRFToken(): string
+{
+    $token = bin2hex(random_bytes(32)); // Generare de 32 de caractere aleatoare în format hexadecimal
+    $_SESSION['csrf_token'] = $token; // Salvarea tokenului în sesiune
+    return $token;
+}
+$csrfToken = generateCSRFToken();
+$_SESSION['csrf_token'] = $csrfToken;
+
+echo '<input type="hidden" name="csrf_token" value="' . $csrfToken . '">';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,23 +46,27 @@
 
     <?php
 
-    $conn = mysqli_connect('localhost','root','66ecdaf1','Users');
-
-    if(isset($_POST['insert-btn'])) {
-        $user_name = $_POST['user_name'];
-        $user_email = $_POST['user_email'];
-        $user_password = $_POST['user_password'];
 
 
-        $insert = "INSERT INTO user(user_name,user_email,user_password) VALUES('$user_name','$user_email','$user_password')";
-        $run_insert = mysqli_query($conn, $insert);
-        if ($run_insert === true) {
-            echo "Data has been inserted";
+        $conn = mysqli_connect('localhost', 'root', '66ecdaf1', 'Users');
 
-        } else {
-            echo "Insert Failed";
+        if (isset($_POST['insert-btn'])) {
+            $user_name = $_POST['user_name'];
+            $user_email = $_POST['user_email'];
+            $user_password = $_POST['user_password'];
+
+
+            $insert = "INSERT INTO user(user_name,user_email,user_password) VALUES('$user_name','$user_email','$user_password')";
+            $run_insert = mysqli_query($conn, $insert);
+            if ($run_insert === true) {
+                echo "Data has been inserted";
+
+            } else {
+                echo "Insert Failed";
+            }
         }
-    }
+
+
 
 
 
